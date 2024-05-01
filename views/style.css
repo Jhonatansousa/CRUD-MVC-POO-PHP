@@ -1,0 +1,27 @@
+body {
+  background-color: #b9b9b9;
+}
+
+.warning {
+  visibility: hidden;
+  display: none;
+}
+
+.warningToggle {
+  display: block;
+  visibility: visible;
+  position: absolute;
+  top: 0;
+  left: 50%;
+
+}
+
+.deleteMessage {
+  display: none;
+  visibility: hidden;
+}
+
+.deleteMessageToggle {
+  display: block;
+  visibility: visible;
+}
