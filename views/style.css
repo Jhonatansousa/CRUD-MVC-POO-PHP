@@ -1,6 +1,114 @@
 body {
-  background-color: #b9b9b9;
+  padding: 2rem 0;
+  background-color: #041c32;
+  color: white;
 }
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+a,
+.cancelDeleteBtn {
+  text-decoration: none;
+  color: white;
+  background-color: #ECB365;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  transition: .2s;
+
+  font-weight: bold;
+}
+
+
+.newClientLink {
+  padding: 1rem 3rem;
+  font-size: 2rem;
+}
+
+.newClientLink:hover {
+  color: #064663;
+  transform: scale(1.05);
+  transition: .2s;
+}
+
+a:active,
+.newClientLink:active,
+.cancelDeleteBtn:active {
+  transform: scale(0.95);
+  background-color: #064663;
+  color: #ECB365;
+  border: 1px solid #ECB365;
+}
+
+.editLink,
+.cancelDeleteBtn {
+  padding: .3rem .7rem;
+  color: #041c32;
+}
+
+.editLink:hover,
+.cancelDeleteBtn {
+  border-color: #041c32;
+}
+
+
+table button,
+.confirmDeleteBtn {
+  background-color: rgb(88, 36, 36);
+  border: 1px solid #041c32;
+  color: #ECB365;
+  padding: .3rem .7rem;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+table button:hover,
+.confirmDeleteBtn:hover {
+  border-color: red;
+  cursor: pointer;
+}
+
+table button:active,
+.confirmDeleteBtn:active {
+  background-color: red;
+  color: #041c32;
+  transform: scale(0.95);
+  transition: .2s;
+}
+
+
+
+table th,
+table td {
+  padding: 10px;
+}
+
+table tbody tr:nth-child(even) {
+  background-color: #04293A;
+}
+
+table tbody tr:nth-child(odd) {
+  background-color: #064663;
+}
+
+td a {
+  margin: 0 2rem;
+}
+
+td button {
+  margin-right: 2rem;
+}
+
+
+td:not(:last-of-type) {
+  margin-bottom: 2rem;
+}
+
 
 .warning {
   visibility: hidden;
@@ -11,8 +119,16 @@ body {
   display: block;
   visibility: visible;
   position: absolute;
-  top: 0;
+  top: 20%;
   left: 50%;
+  transform: translate(-50%, -50%);
+
+  background-color: #064663;
+  border: 1px solid #ECB365;
+  border-radius: 10px;
+
+  padding: 2rem;
+
 
 }
 
@@ -24,4 +140,47 @@ body {
 .deleteMessageToggle {
   display: block;
   visibility: visible;
+}
+
+
+form {
+
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  font-weight: bold;
+}
+
+.btnSubmit,
+.btnEdit {
+  color: white;
+  background-color: #ECB365;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  transition: .2s;
+
+  padding: .3rem .7rem;
+  font-weight: bold;
+}
+
+.btnSubmit:hover,
+.btnEdit:hover {
+  cursor: pointer;
+}
+
+.btnSubmit:active,
+.btnEdit:active {
+  transform: scale(0.95);
+  background-color: #064663;
+  color: #ECB365;
+  border: 1px solid #ECB365;
+}
+
+
+.goHome {
+  color: #064663;
+  margin-top: 2rem;
+  padding: 1rem 2rem;
 }

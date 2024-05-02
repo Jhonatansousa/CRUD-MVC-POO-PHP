@@ -13,45 +13,62 @@
 <body>
   <!-- ao clicar no link, eu já passo o parâmetro get['a'] 
   que será: RegisterNewClient, onde no index é executado -->
-  <a href="./index.php?a=RegisterNewClient">Register New Client</a>
+  <main>
 
-  <h1>Clients List</h1>
+    <a class="newClientLink" href="./index.php?a=RegisterNewClient">Register New Client</a>
 
-  <div class="content">
-    <table class="table">
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Phone</th>
-        </tr>
-      </thead>
-      <tbody>
-        <?php
-        foreach ($resultData as $data) {
+    <h1>Clients List</h1>
 
-        ?>
+    <div class="content">
+      <table class="table">
+        <thead>
           <tr>
-            <td> <?php echo $data['id']; ?> </td>
-            <td> <?php echo $data['name']; ?> </td>
-            <td> <?php echo $data['email']; ?> </td>
-            <td> <?php echo $data['phone']; ?> </td>
-            <td>
-              <a href="./index.php?a=searchClient&id=<?php echo ($data['id']); ?>">Edit</a>
-              <button onclick="deleteWarning(<?= $data['id'] ?>)">Delete</button>
-            </td>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
           </tr>
-        <?php } ?>
-      </tbody>
-    </table>
-    <div class="warning" id="warning">
-      <h1>Do you want to delete user?</h1>
-      <button id="confirmDeleteBtn">Yes</button>
-      <button id="cancelDeleteBtn">No</button>
-    </div>
+        </thead>
+        <tbody>
+          <?php
+          foreach ($resultData as $data) {
 
-  </div>
+          ?>
+            <tr>
+              <td>
+                <?php echo $data['id']; ?>
+              </td>
+              <td>
+                <?php echo $data['name']; ?>
+              </td>
+              <td>
+                <?php echo $data['email']; ?>
+              </td>
+              <td>
+
+                <?php
+                $number = $data['phone'];
+                $formatNumber = '(' . substr($number, 0, 2) . ') ' . substr($number, 2, 5) . '-' . substr($number, 7, 4);
+                echo $formatNumber;
+                ?>
+
+              </td>
+              <td>
+                <a class="editLink" href="./index.php?a=searchClient&id=<?php echo ($data['id']); ?>">Edit</a>
+                <button onclick="deleteWarning(<?= $data['id'] ?>)">Delete</button>
+              </td>
+            </tr>
+          <?php } ?>
+        </tbody>
+      </table>
+      <div class="warning" id="warning">
+        <h1>Do you want to delete user?</h1>
+        <button class="confirmDeleteBtn" id="confirmDeleteBtn">Yes</button>
+        <button class="cancelDeleteBtn" id="cancelDeleteBtn">No</button>
+      </div>
+
+    </div>
+  </main>
 
 </body>
 <script>
